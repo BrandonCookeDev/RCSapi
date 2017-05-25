@@ -75,7 +75,7 @@ EventSchema.statics.get = function(){
 EventSchema.statics.getFutureEvents = function(){
     let thisEvent = this;
     return new Promise(function(resolve, reject) {
-        thisEvent.find({"date": {$gte: new Date(Date.now)}}, function (err, docs) {
+        thisEvent.find({"date": {$gte: new Date(Date.now())}}, function (err, docs) {
             if (err) {
                 log.error(err);
                 return reject(err);
