@@ -1,0 +1,65 @@
+2017-05-25T04:29:35.083Z - error:  ReferenceError: Event is not defined
+    at EventSchema.statics.get (/Users/bcooke/Documents/Workspace/RCSwebsite/api/models/upcoming/event.model.js:57:9)
+    at Function.EventSchema.statics.get (/Users/bcooke/Documents/Workspace/RCSwebsite/api/models/upcoming/event.model.js:56:12)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/models/upcoming/endpoints.js:8:11
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:174:3)
+    at router (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:635:15
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:260:14)
+    at Function.handle (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:174:3)
+    at router (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at session (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express-session/index.js:454:7)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at urlencodedParser (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/body-parser/lib/types/urlencoded.js:91:7)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at jsonParser (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/body-parser/lib/types/json.js:103:7)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at allowCrossDomain (/Users/bcooke/Documents/Workspace/RCSwebsite/api/common/common.js:47:9)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at expressInit (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/middleware/init.js:40:5)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at query (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/middleware/query.js:44:5)
+    at Layer.handle [as handle_request] (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:317:13)
+    at /Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:335:12)
+    at next (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/router/index.js:174:3)
+    at EventEmitter.handle (/Users/bcooke/Documents/Workspace/RCSwebsite/api/node_modules/express/lib/application.js:174:10)

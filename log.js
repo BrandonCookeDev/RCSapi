@@ -2,7 +2,7 @@ var winston	= require('winston');
 require('winston-daily-rotate-file');
 
 var transport = new winston.transports.DailyRotateFile({
-    filename: 'RCSapi',
+    filename: './logs/RCSapi',
     datePattern: '.yyyy-MM-dd.log',
     level: 'warn',
     colorize: false,

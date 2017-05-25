@@ -350,5 +350,6 @@ app.delete('/api/user/logout', function(req, res){
 });
 
 require('./models/team/endpoints')(app);
+require('./models/upcoming/endpoints')(app);
 
 module.exports = app;
