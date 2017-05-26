@@ -22,7 +22,7 @@ router.route('/team/:category').get(function(req, res){
 router.route('/team').put(function(req, res){
     var newMember = req.body.newMember;
     var model = new Team(newMember);
-    Team.create(model)
+    model.insert()
         .then(function(success){
             if(success == true)
                 res.sendStatus(200);
@@ -36,42 +36,19 @@ router.route('/team').put(function(req, res){
 
 router.route('/team').post(function(req, res){
     var updatedMember = req.body.updatedMember;
-    Team.findById(updatedMember.id, function(err, docs){
-        if(err) {
-            log.error(err);
-            return res.sendStatus(500);
-        }
-
-        docs.name = updatedMember.name;
-        docs.position = updatedMember.position;
-        docs.twitter = updatedMember.twitter;
-        docs.bio = updatedMember.bio;
-        docs.picture = updatedMember.picture;
-        docs.category = updatedMember.category;
-        docs.results = updatedMember.results;
-
-        docs.save(function(err, docs){
-            if(err) {
-                log.error(err);
-                return res.sendStatus(500);
-            }
-
-            return res.sendStatus(200);
+    var updatedModel = new Team(updatedMember);
+    updatedModel.update()
+        .then(function(results){
+            res.status(200).send(results);
         })
-
-    }).then(function(){
-        return res.sendStatus(200);
-    }).catch(function(err){
-        if(err) {
-            log.error(err);
-            return res.sendStatus(500);
-        }
-    })
+        .catch(function(err){
+            res.status(500).send(err);
+        });
 });
 
 router.route('/team').delete(function(req, res){
     var deleteMember = req.body.deleteMember;
-    Team.delete(deleteMember)
+    deleteMember.delete()
         .then(function(success){
             if(success==true)
                 res.sendStatus(200);

@@ -18,29 +18,10 @@ var TeamSchema = mongoose.Schema({
 	results: [ResultSchema]
 });
 
-var TeamModel = mongoose.model(modelName, TeamSchema, 'team');
-
-TeamModel.getAll = function(){
-    return new Promise(function(resolve, reject){
-        TeamModel.find(function(err, team){
-            if(err){
-                log.error(err);
-                return reject(err);
-            }
-
-            resolve(team);
-        }).catch(function(err){
-            if(err){
-                log.error(err);
-                return reject(err);
-            }
-        })
-    });
-};
-
-TeamModel.create = function(newTeamMember){
+TeamSchema.methods.insert = function(){
+    let thisTeam = this;
 	return new Promise(function(resolve, reject){
-        newTeamMember.save(function(err, docs){
+        thisTeam.model('Team').save(function(err, docs){
             if(err){
                 log.error(err);
 				return reject(err);
@@ -57,9 +38,10 @@ TeamModel.create = function(newTeamMember){
 	});
 };
 
-TeamModel.delete = function(member){
+TeamSchema.methods.delete = function(){
+    let thisTeam = this;
     return new Promise(function(resolve, reject){
-        TeamModel.findByIdAndRemove(member.id, function(err, docs){
+        thisTeam.model('Team').findByIdAndRemove(thisTeam._id, function(err, docs){
             if(err){
                 log.error(err);
                 return reject(err);
@@ -75,47 +57,70 @@ TeamModel.delete = function(member){
     })
 };
 
-TeamModel.getById = function(id){
-	return new Promise(function(resolve, reject){
-        TeamModel.findById({"_id": id}, function(err, docs){
-            if(err){
-                log.error(err);
-                return reject(err);
-            }
 
-            return resolve(docs);
-        }).catch(function(err){
-            if(err){
-                log.error(err);
-                return reject(err);
-            }
-            return reject(err);
-        })
-	})
-};
-
-TeamModel.getByName = function(name){
-	return new Promise(function(resolve, reject){
-        TeamModel.find({"name": name}, function(err, docs){
-            if(err){
-                log.error(err);
-                return reject(err);
-            }
-
-            return resolve(docs);
-        }).catch(function(err){
-            if(err){
-                log.error(err);
-                return reject(err);
-            }
-            return reject(err);
-        })
-	})
-};
-
-TeamModel.getByCategory = function(category){
+TeamSchema.statics.getAll = function(){
+    let thisTeam = this;
     return new Promise(function(resolve, reject){
-        TeamModel.find({"category": category}, function(err, docs){
+        thisTeam.find(function(err, team){
+            if(err){
+                log.error(err);
+                return reject(err);
+            }
+
+            resolve(team);
+        }).catch(function(err){
+            if(err){
+                log.error(err);
+                return reject(err);
+            }
+        })
+    });
+};
+
+TeamSchema.statics.getById = function(id){
+    let thisTeam = this;
+	return new Promise(function(resolve, reject){
+        thisTeam.findById({"_id": id}, function(err, docs){
+            if(err){
+                log.error(err);
+                return reject(err);
+            }
+
+            return resolve(docs);
+        }).catch(function(err){
+            if(err){
+                log.error(err);
+                return reject(err);
+            }
+            return reject(err);
+        })
+	})
+};
+
+TeamSchema.getByName = function(name){
+    let thisTeam = this;
+	return new Promise(function(resolve, reject){
+        thisTeam.find({"name": name}, function(err, docs){
+            if(err){
+                log.error(err);
+                return reject(err);
+            }
+
+            return resolve(docs);
+        }).catch(function(err){
+            if(err){
+                log.error(err);
+                return reject(err);
+            }
+            return reject(err);
+        })
+	})
+};
+
+TeamSchema.getByCategory = function(category){
+    let thisTeam = this;
+    return new Promise(function(resolve, reject){
+        thisTeam.find({"category": category}, function(err, docs){
             if(err){
                 log.error(err);
                 return reject(err);
@@ -132,21 +137,22 @@ TeamModel.getByCategory = function(category){
     })
 };
 
-TeamSchema.statics.update = function(updatedMember){
+TeamSchema.methods.update = function(){
+    let thisTeam = this;
 	return new Promise(function(resolve, reject){
-        TeamModel.findById(updatedMember.id, function(err, docs){
+        thisTeam.model('Team').findById(thisTeam._id, function(err, docs){
             if(err){
                 log.error(err);
                 return reject(err);
             }
 
-            docs.name = updatedMember.name;
-            docs.position = updatedMember.position;
-            docs.twitter = updatedMember.twitter;
-            docs.bio = updatedMember.bio;
-            docs.picture = updatedMember.picture;
-            docs.category = updatedMember.category;
-            docs.results = updatedMember.results;
+            docs.name = thisTeam.name;
+            docs.position = thisTeam.position;
+            docs.twitter = thisTeam.twitter;
+            docs.bio = thisTeam.bio;
+            docs.picture = thisTeam.picture;
+            docs.category = thisTeam.category;
+            docs.results = thisTeam.results;
 
             docs.save(function(err, docs){
                 if(err) {
@@ -168,4 +174,4 @@ TeamSchema.statics.update = function(updatedMember){
 
 
 
-module.exports = TeamModel;
+module.exports = mongoose.model(modelName, TeamSchema, 'team');

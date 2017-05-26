@@ -10,7 +10,7 @@ var common      = require('./common/common');
 var Cache       = require('./cache').instance;
 var Team        = require('./models/team/team.model');
 var Contact     = require('./models/contact/contact.model');
-var Events      = require('./models/upcoming/event.model');
+var Events      = require('./models/events/event.model');
 var User        = require('./models/user/user.model');
 var Tournaments = require('./models/tournaments/tournament.model');
 var Mailer      = require('./components/emailer');
@@ -350,6 +350,6 @@ app.delete('/api/user/logout', function(req, res){
 });
 
 require('./models/team/endpoints')(app);
-require('./models/upcoming/endpoints')(app);
+require('./models/events/endpoints')(app);
 
 module.exports = app;
